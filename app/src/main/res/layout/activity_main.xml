@@ -1,121 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9FAFB"
+    android:background="#FFFFFF"
     android:padding="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-        <!-- Card container -->
-        <LinearLayout
+        <!-- App Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ado-pet"
+            android:textColor="#E64A19"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Orange Card for Form -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardForm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/card_bg"
-            android:orientation="vertical"
-            android:padding="20dp"
-            android:elevation="4dp">
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/card_orange"
+            app:cardUseCompatPadding="true">
 
-            <!-- Location -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Location"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#374151"
-                android:layout_marginBottom="6dp"/>
-
-            <EditText
-                android:id="@+id/editLocation"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Enter location"
-                android:background="@drawable/input_bg"
-                android:padding="12dp"
-                android:layout_marginBottom="18dp"/>
-
-            <!-- Gender -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Gender"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#374151"
-                android:layout_marginBottom="6dp"/>
-
-            <RadioGroup
-                android:id="@+id/radioGender"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="18dp">
+                android:orientation="vertical"
+                android:padding="20dp">
 
-                <RadioButton
-                    android:id="@+id/radioMale"
+                <!-- Location -->
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Male"
-                    android:buttonTint="#4CAF50"
-                    android:textColor="#374151"/>
+                    android:text="Location"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="4dp" />
 
-                <RadioButton
-                    android:id="@+id/radioFemale"
+                <EditText
+                    android:id="@+id/editLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Enter location"
+                    android:background="@drawable/input_bg"
+                    android:padding="12dp"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Gender -->
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Female"
-                    android:buttonTint="#4CAF50"
-                    android:textColor="#374151"
-                    android:layout_marginStart="24dp"/>
-            </RadioGroup>
+                    android:text="Gender"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="4dp" />
 
-            <!-- Size -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Size"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#374151"
-                android:layout_marginBottom="6dp"/>
+                <RadioGroup
+                    android:id="@+id/radioGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp">
 
-            <Spinner
-                android:id="@+id/spinnerSize"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@drawable/input_bg"
-                android:layout_marginBottom="18dp"/>
+                    <RadioButton
+                        android:id="@+id/radioMale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="32dp"
+                        android:buttonTint="#FFFFFF"
+                        android:text="Male"
+                        android:textColor="#FFFFFF" />
 
-            <!-- Age -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Age"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#374151"
-                android:layout_marginBottom="6dp"/>
+                    <RadioButton
+                        android:id="@+id/radioFemale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Female"
+                        android:buttonTint="#FFFFFF"
+                        android:textColor="#FFFFFF" />
+                </RadioGroup>
 
-            <Spinner
-                android:id="@+id/spinnerAge"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@drawable/input_bg"
-                android:layout_marginBottom="24dp"/>
+                <!-- Size -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Size"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="4dp" />
 
-            <!-- Submit Button -->
-            <Button
-                android:id="@+id/btnSubmit"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="Submit"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:background="@drawable/button_bg"/>
-        </LinearLayout>
+                <EditText
+                    android:id="@+id/editSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Small"
+                    android:background="@drawable/input_bg"
+                    android:padding="12dp"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Age -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="4dp" />
+
+                <EditText
+                    android:id="@+id/editAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Puppy/Kitten"
+                    android:background="@drawable/input_bg"
+                    android:padding="12dp"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- Submit Button -->
+                <Button
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="FIND PET"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:backgroundTint="#E65100"
+                    android:layout_marginBottom="8dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Pet Image at Bottom -->
+        <ImageView
+            android:id="@+id/imgPet"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="Pet Image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_pet" />
     </LinearLayout>
 </ScrollView>
